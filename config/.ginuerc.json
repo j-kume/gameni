@@ -1,0 +1,22 @@
+{
+  "env": {
+    "pro": {
+      "domain": "xxxxxxx.cybozu.com",
+      "username": "user",
+      "password": "pw",
+      "app": {
+        "aaaaaaaaa": 0,
+        "bbbbbbbbb": 0
+      }
+    },
+    "dev": {
+      "domain": "xxxxxxx.cybozu.com",
+      "username": "user",
+      "password": "pw",
+      "app": {
+        "aaaaaaaaa": 0,
+        "bbbbbbbbb": 0
+      }
+    }
+  }
+}
