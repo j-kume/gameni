@@ -12,7 +12,7 @@
 
 
 # 環境構築
-* [kintone_dev_template](https://bitbucket.org/aisic/kintone_dev_template/src/master/)リポジトリをForkして、新しいリポジトリを作成する
+* 本リポジトリをForkして、新しいリポジトリを作成する
 * ローカルのプロジェクト別のフォルダ内に kintone フォルダを作成し、リモートリポジトリと繋ぐ
 * Dropbox内にプロジェクト用のフォルダを作成する。
     * \\Dropbox\\kintne_dev\\xxxx\\
