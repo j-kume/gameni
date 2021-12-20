@@ -3,13 +3,13 @@
   "scope": "ALL",
   "desktop": {
     "js": [
-      "dist/order_slip.js"
+      "dist/template.js"
     ],
     "css": []
   },
   "mobile": {
     "js": [
-      "dist/order_slip.js"
+      "dist/template.js"
     ],
     "css": []
   }

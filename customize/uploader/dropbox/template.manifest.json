@@ -3,13 +3,13 @@
   "scope": "ALL",
   "desktop": {
     "js": [
-      "https://dl.dropboxusercontent.com/s/XXXXXXXXXXXX/order_slip.js"
+      "https://dl.dropboxusercontent.com/s/XXXXXXXXXXXX/template.js"
     ],
     "css": []
   },
   "mobile": {
     "js": [
-      "https://dl.dropboxusercontent.com/s/XXXXXXXXXXXX/order_slip.js"
+      "https://dl.dropboxusercontent.com/s/XXXXXXXXXXXX/template.js"
     ],
     "css": []
   }

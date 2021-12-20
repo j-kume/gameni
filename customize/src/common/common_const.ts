@@ -24,8 +24,8 @@ export const cc = {
       token: 'XXXXXXXXXXXXXXXXXXXXX'
     },
     dev: {
-      app: 133,
-      token: 'UldtRXRjbUVabGJ5UFBvcFYyM3dmQ0lXb2xadW96eVRJQmpKMVZCWA=='
+      app: 9999,
+      token: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
     }
   }
 };

@@ -1,8 +1,8 @@
 export const apps_all = {
   pro: [
-    { app: 0, code: "order_slip", name: "受注票" }
+    { app: 0, code: "template", name: "テンプレート" }
   ],
   dev: [
-    { app: 999, code: "order_slip", name: "【開発】受注票" }
+    { app: 999, code: "template", name: "【開発】テンプレート" }
   ]
 };

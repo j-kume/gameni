@@ -1,11 +1,14 @@
 //=============================================================================
 //【ファイル名】
-//    xx_app_code_xx/const.ts
+//    xxxxx/const.ts
 //【アプリ名】
-//  〇〇〇
+//  〇〇〇〇〇
 //-----------------------------------------------------------------------------
 //  Copyright (c) 2021 AISIC.Inc
 //=============================================================================
 
-export const FISCAL_START_YEAR = '08-01';
-export const FISCAL_END_YEAR = '07-31';
+export const XXXXXXXXXX = 'abcde';
+export const YYYYYYYYYY = {
+  aaa: 123,
+  bbb: 'xyz'
+};

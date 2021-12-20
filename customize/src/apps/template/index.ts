@@ -7,7 +7,7 @@
 //  Copyright (c) 2021 AISIC.Inc
 //=============================================================================
 import * as errorLog from '../../common/error_log';
-import * as commonConst from '../../common/common_const';
+// import * as commonConst from '../../common/common_const';
 import * as kt from '../../common/kintone_tools';
 import * as func from './func';
 
