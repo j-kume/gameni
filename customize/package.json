@@ -1,7 +1,7 @@
 {
-  "name": "gdht_kintone",
+  "name": "xxxxx_kintone",
   "version": "1.0.0",
-  "description": "for gdht_kintone customize using webpack,babel",
+  "description": "for xxxxx_kintone customize using webpack,babel",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,19 +15,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yokotaso/sample-kintone-webpack.git"
+    "url": "git+https://github.com/j-kume/gameni.git"
   },
   "keywords": [
     "kintone",
     "webpack",
     "babel"
   ],
-  "author": "AISIC.inc",
+  "author": "XXXXXXXXX",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yokotaso/sample-kintone-webpack/issues"
+    "url": "https://github.com/j-kume/gameni/issues"
   },
-  "homepage": "https://github.com/yokotaso/sample-kintone-webpack#readme",
+  "homepage": "https://github.com/j-kume/gameni",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/node": "^7.8.7",
