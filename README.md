@@ -71,6 +71,3 @@
 
 
 
-# memo
-
-npx @kintone/dts-gen --host https://aisic-showroom.cybozu.com -u development -p dbQKvZVDPIXh2yYX --app-id 621 --type-name Client --namespace KintoneTypes -o src/types/Client.d.ts
