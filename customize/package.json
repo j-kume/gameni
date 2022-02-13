@@ -74,6 +74,7 @@
     "kintone-ui-component": "^1.0.2",
     "luxon": "^1.26.0",
     "moment": "^2.29.1",
-    "moment-timezone": "^0.5.33"
+    "moment-timezone": "^0.5.33",
+    "sweetalert2": "^11.4.0"
   }
 }

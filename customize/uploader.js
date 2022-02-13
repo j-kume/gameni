@@ -1,6 +1,6 @@
-import { apps_all } from './uploader/_apps'
 import { execSync } from 'child_process';
 import fs from 'fs';
+import * as  apps_info from './apps_info';
 
 console.log('\n###############');
 
@@ -17,24 +17,23 @@ if (process.env.NODE_UPTO) {
 
 console.log('\n###############');
 
-let target_apps = process.env.TARGET_APPS.split(',');
+const target_configs = apps_info.configs.filter(v => v.env === process.env.NODE_ENV);
+const target_apps = process.env.TARGET_APPS.split(',');
 
-let apps = apps_all[process.env.NODE_ENV]
-apps.forEach(v => {
-
-  console.log(v.app + ' : ' + v.code + ' : ' + v.name);
+target_configs.forEach(config => {
+  console.log(config.env + ' : ' + config.code + ' : ' + config.id + ' : ' + config.name);
 
   // target_appsに含まれていない時には、スキップする
-  if(process.env.TARGET_APPS){
-    if (!target_apps.includes(v.code)) {
+  if (process.env.TARGET_APPS) {
+    if (!target_apps.includes(config.code)) {
       console.log('\nスキップ');
       console.log('\n###############');
       return;
     }
   }
 
-  const manifest_path = 'uploader/' + upto_dir + v.code + '.manifest.json';
-  const tmp_path = 'uploader/' + upto_dir + '_' + v.code + '.manifest.json';
+  const manifest_path = 'uploader/' + upto_dir + config.code + '.manifest.json';
+  const tmp_path = 'uploader/' + upto_dir + '_' + config.code + '.manifest.json';
 
   if (fs.existsSync(manifest_path)) {
     console.log('\nfile copy');
@@ -46,7 +45,7 @@ apps.forEach(v => {
     console.log(' ... get success!');
 
     console.log('\nreplace contents');
-    contents = contents.replace(/APP_ID/g, v.app);
+    contents = contents.replace(/APP_ID/g, config.id);
     console.log(' ... replace success!');
 
     console.log('\nwrite contents');
