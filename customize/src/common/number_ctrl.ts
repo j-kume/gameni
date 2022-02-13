@@ -3,8 +3,6 @@
 //  number_ctrl.ts
 //【機能】
 //  番号管理マスタ関連処理
-//-----------------------------------------------------------------------------
-//  Copyright (c) 2022 AISIC.Inc
 //=============================================================================
 import { Apps } from './apps';
 import { KintoneRestAPIClient } from '@kintone/rest-api-client';

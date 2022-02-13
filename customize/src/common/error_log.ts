@@ -3,8 +3,6 @@
 //  error_log.ts
 //【機能】
 //  エラーログ関連処理
-//-----------------------------------------------------------------------------
-//  Copyright (c) 2021 AISIC.Inc
 //=============================================================================
 import { Apps } from './apps';
 import { KintoneRestAPIClient } from '@kintone/rest-api-client';

@@ -18,7 +18,9 @@
     "./node_modules/@kintone/dts-gen/kintone.d.ts"
   ],
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "apps_info.js",
+    "apps_info.d.ts"
   ],
   "exclude": [
     "dist",
