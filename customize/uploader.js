@@ -12,7 +12,7 @@ const command = `npx kintone-customize-uploader --domain ${process.env.KINTONE_D
 
 let upto_dir = '';
 if (process.env.NODE_UPTO) {
-  upto_dir = 'dropbox/';
+  upto_dir = process.env.NODE_UPTO + '/';
 }
 
 console.log('\n###############');

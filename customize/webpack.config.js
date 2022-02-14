@@ -12,12 +12,12 @@ if (process.env.NODE_ENV) {
   if (process.env.NODE_ENV === 'pro') {
     output_path = path.resolve(__dirname, 'dist');
   } else if (process.env.NODE_ENV === 'dev') {
-    output_path = process.env.DROPBOX_PATH;
+    output_path = process.env.DEV_OUTPUT_PATH;
   } else {
     output_path = '#########';
   }
 } else {
-  output_path = process.env.DROPBOX_PATH;
+  output_path = process.env.DEV_OUTPUT_PATH;
 }
 
 // ====================
