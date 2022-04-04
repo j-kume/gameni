@@ -59,6 +59,8 @@
 * config フォルダ内に展開
 * ginueをプロジェクトにインストール
     * `$ npm install --save-dev ginue`
+    * もしくは `$ npm install -g ginue`
+        * プロジェクトフォルダだと上手く行っていないのでglobalの方がよさそう
 * 開発環境の設計情報をダウンロード
     * `$ ginue pull dev`
 * 本番環境の設計情報をダウンロード
