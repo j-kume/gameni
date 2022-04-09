@@ -15,7 +15,7 @@
 * 本リポジトリをForkして、新しいリポジトリを作成する
 * ローカルのプロジェクト別のフォルダ内に kintone フォルダを作成し、リモートリポジトリと繋ぐ
 * Dropbox内にプロジェクト用のフォルダを作成する。
-    * \\Dropbox\\kintne_dev\\xxxx\\
+    * \\Dropbox\\kintone_dev\\xxxx\\
 
 
 
@@ -24,9 +24,9 @@
 
 
 # customize
-* customize フォルダ内に展開
-* `_env` ファイルを複製して、ファイル名を `.env` にリネームして、プロジェクト直下に配置する
-* ファイル内の「xxxxx」等を適切に修正
+## node module のインストール
+* customize フォルダ内で下記コマンドを実行
+* 必要であれば、`package.json` の devDependencies / dependencies を適宜修正
 * node module のインストール
     * `$ npm install`
     * 依存関係のエラー(ERESOLVE unable to resolve dependency tree・・・)が出た時には、強制的に更新する
@@ -35,10 +35,29 @@
         * `$ npm audit fix`
     * それでもauditのセキュリティ警告が出る場合
         * `npm audit fix --force`
-* src/apps フォルダ内に アプリCODE に対応したフォルダを生成し `index.ts`、`func.ts` を配置
-* common フォルダ内の `system_const.ts` 内に番号管理マスタのアプリIDとApiTokenをセットする。ただし、ApiTokenは `btoa()` で変換しておくこと。
-* .manifest.jsonのjsに記入する際、distファイルの階層が必要「dist/xxxx.js」
-* uploader\\_apps.js のファイルにアプリID等をセットする
+
+
+## .env について
+* `_env` ファイルを複製して、ファイル名を `.env` にリネームして、プロジェクト直下に配置する
+* DEV_OUTPUT_PATH
+    * 開発時に随時更新するファイルを出力するフォルダ
+        * Dropboxなど
+* TARGET_APPS
+    * kintone customize uploader で更新するアプリを指定する
+    * 指定方法
+        * app1,app2,app3
+        * `apps_info.js` で指定する `code` をカンマで繋いだもの
+
+
+## apps_info.js について
+* `apps_info.js` のファイルにアプリID等をセットする
+
+
+## アプリ毎のファイルの配置
+* src/apps フォルダ内に `apps_info.js` で指定した `code` に対応したフォルダを生成し `const.ts`、`index.ts`、`func.ts` を配置
+* ファイル内の「xxxxx」等を適切に修正
+* `xxxxx.manifest.json` のjsに記入する際、distファイルの階層が必要「dist/xxxx.js」
+
 
 
 # test
