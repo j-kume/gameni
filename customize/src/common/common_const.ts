@@ -17,15 +17,5 @@ export const cc = {
   wait_time: 1000, // sleep関数使用時のセットtime
   retry: 3, // uid取得時のリトライ回数
   log_mode: true,
-  duration_mode: true,
-  number_ctrl: {
-    pro: {
-      app: 0,
-      token: 'XXXXXXXXXXXXXXXXXXXXX'
-    },
-    dev: {
-      app: 9999,
-      token: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-    }
-  }
+  duration_mode: true
 };
