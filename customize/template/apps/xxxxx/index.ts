@@ -150,8 +150,8 @@ import * as func from './func';
         return event;
       }
 
-      record.record_title.value = func.getLookupKey(record.AAAAA.value, record.BBBBB.value, record.no.value);
-      record.lookup_key.value = func.getRecordTitle(record.AAAAA.value, record.BBBBB.value, record.no.value);
+      record.lookup_key.value = func.getLookupKey(record.AAAAA.value, record.BBBBB.value, record.no.value);
+      record.record_title.value = func.getRecordTitle(record.AAAAA.value, record.BBBBB.value, record.no.value);
 
     } catch (e) {
       console.log(e);
