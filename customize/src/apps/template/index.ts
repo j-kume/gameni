@@ -12,6 +12,7 @@ import { NumberCtrl } from '../../common/number_ctrl';
 import { ErrorLog } from '../../common/error_log';
 import * as kt from '../../common/kintone_tools';
 import * as func from './func';
+import * as lc from './const';
 
 (() => {
   'use strict';
@@ -76,7 +77,7 @@ import * as func from './func';
       }
 
       let uid = await numberCtrl.getNextUidAndIncrement(kt.getId());
-      let no = await func.getNo(uid);
+      let no = func.getNo(uid);
 
       record.uid.value = uid;
       record.no.value = no;
