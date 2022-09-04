@@ -77,12 +77,7 @@ import * as lc from './const';
       }
 
       let uid = await numberCtrl.getNextUidAndIncrement(kt.getId());
-      let no = func.getNo(uid);
-
-      record.uid.value = uid;
-      record.no.value = no;
-      record.lookup_key.value = func.getLookupKey(record.AAAAA.value, record.BBBBB.value, no);
-      record.record_title.value = func.getRecordTitle(record.AAAAA.value, record.BBBBB.value, no);
+      func.getCreateValues(record, uid);
 
     } catch (e) {
       console.log(e);
@@ -151,8 +146,7 @@ import * as lc from './const';
         return event;
       }
 
-      record.lookup_key.value = func.getLookupKey(record.AAAAA.value, record.BBBBB.value, record.no.value);
-      record.record_title.value = func.getRecordTitle(record.AAAAA.value, record.BBBBB.value, record.no.value);
+      func.getEditValues(record);
 
     } catch (e) {
       console.log(e);

@@ -12,7 +12,7 @@
  * @param record レコード情報
  * @returns
  */
- export const setCommonInputCtrl = (record: any): void => {
+export const setCommonInputCtrl = (record: any): void => {
   record.uid.disabled = true;
   record.no.disabled = true;
   record.lookup_key.disabled = true;
@@ -43,6 +43,26 @@ export const validation = (event: any): void => {
   // }
 };  // validation
 
+/**
+ * 登録時レコード情報 セット
+ * @param record レコード情報
+ */
+export const getCreateValues = (record: any, uid: number) => {
+  const no = getNo(uid);
+  record.uid.value = uid;
+  record.no.value = no;
+  record.lookup_key.value = getLookupKey(record.AAAAA.value, record.BBBBB.value, no);
+  record.record_title.value = getRecordTitle(record.AAAAA.value, record.BBBBB.value, no);
+};
+
+/**
+ * 編集時レコード情報 セット
+ * @param record レコード情報
+ */
+export const getEditValues = (record: any) => {
+  record.lookup_key.value = getLookupKey(record.AAAAA.value, record.BBBBB.value, record.no.value);
+  record.record_title.value = getRecordTitle(record.AAAAA.value, record.BBBBB.value, record.no.value);
+};
 
 /**
  * No 取得
@@ -50,7 +70,6 @@ export const validation = (event: any): void => {
  * @returns No
  */
 export const getNo = (uid: number) => String(uid);
-
 
 /**
  * レコード情報検索 取得
@@ -70,7 +89,6 @@ export const getLookupKey = (arg1: string, arg2: string, arg3: string) => {
 
   return ret;
 };
-
 
 /**
  * レコードタイトル 取得
