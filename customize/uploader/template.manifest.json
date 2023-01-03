@@ -3,13 +3,13 @@
   "scope": "ALL",
   "desktop": {
     "js": [
-      "dist/template.js"
+      "DIST_PATH/template.js"
     ],
     "css": []
   },
   "mobile": {
     "js": [
-      "dist/template.js"
+      "DIST_PATH/template.js"
     ],
     "css": []
   }
