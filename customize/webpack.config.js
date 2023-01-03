@@ -6,19 +6,9 @@ require('dotenv').config();
 
 const basePath = path.resolve('src', 'apps');
 
-console.log('NODE_ENV : ' + process.env.NODE_ENV);
-let output_path = '';
-if (process.env.NODE_ENV) {
-  if (process.env.NODE_ENV === 'pro') {
-    output_path = path.resolve(__dirname, 'dist');
-  } else if (process.env.NODE_ENV === 'dev') {
-    output_path = process.env.DEV_OUTPUT_PATH;
-  } else {
-    output_path = '#########';
-  }
-} else {
-  output_path = process.env.DEV_OUTPUT_PATH;
-}
+const output_path = path.resolve(__dirname, process.env.DIST_DIR);
+
+console.log('NODE_ENV : ' + process.env.ENV_MODE);
 
 // ====================
 // basePath配下の各ディレクトリを複数のentryとする

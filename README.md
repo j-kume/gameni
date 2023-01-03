@@ -1,26 +1,52 @@
 # webpack script
 |  script  |  内容  |
 | ---- | ---- |
-|  `$ npm run build-dev`  |  dropbox に配置 / ソースマップあり  |
-|  `$ npm run build-pro`  |  dist に配置 / ソースマップなし  |
-|  `$ npm run dev`  |  watchモード / dropbox に配置 / ソースマップあり  |
-|  `$ npm run pro`  |  dist に配置 / ソースマップなし  |
-|  `$ npm run upload-dropbox`  |  dropboxリンクがセットされている customize-uploader 情報をkintoneにアップロードする / アップロード先：開発環境  |
-|  `$ npm run upload-dev`  |  dist 配下の customize-uploader 情報をkintoneにアップロードする / アップロード先：開発環境  |
-|  `$ npm run upload-pro`  |  dist 配下の customize-uploader 情報をkintoneにアップロードする / アップロード先：本番環境  |
+|  `$ npm run build-dev`  |  ビルド / ソースマップあり  |
+|  `$ npm run build-pro`  |  ビルド / ソースマップなし  |
+|  `$ npm run dev`  |  ビルド / ソースマップあり / watchモード  |
+|  `$ npm run file2dev`  |  ファイルアップロード / アップロード先：開発環境  |
+|  `$ npm run svr2dev`  |  ローカルHTTPSサーバー / アップロード先：開発環境  |
+|  `$ npm run file2pro`  |  ファイルアップロード / アップロード先：本番環境  |
+|  `$ npm run svr2pro`  |  ローカルHTTPSサーバー / アップロード先：本番環境  |
 
 
 
 # 環境構築
+## ソースの取得
 * 本リポジトリをForkして、新しいリポジトリを作成する
 * ローカルのプロジェクト別のフォルダ内に kintone フォルダを作成し、リモートリポジトリと繋ぐ
-* Dropbox内にプロジェクト用のフォルダを作成する。
-    * \\Dropbox\\kintone_dev\\xxxx\\
 
+## mkcertの準備
+* mkcertをインストールする。
+    * **以下、win端末で、c:\tools\mkcertに「mkcert-vX.X.X-windows-amd64.exe」を配置し、インストールすることを前提に解説する。**
+    * **[こちら](https://github.com/FiloSottile/mkcert/releases)** から自分の端末にあったものをダウンロードする。
+    * 下記コマンドをコマンドプロンプト or PowerShellで実行する
+        * `$ cd c:\tools\mkcert`
+        * `$ mkcert-vX.X.X-windows-amd64.exe -install`
+        * `$ mkcert-vX.X.X-windows-amd64.exe localhost 127.0.0.1 ::1`
+    * c:\tools\mkcert フォルダ内に「localhost+2-key.pem」「localhost+2.pem」ができる
 
-
-
-
+## Visal Studio CodeにLive Server Extension を使う場合
+* Visal Studio CodeのExtensionの **「[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)」** を入れる。
+    * Live Server ExtensionのWorkspaceの設定を変更する
+    * https
+        * enable： true
+        * cert： localhost+2.pem
+        * key： localhost+2-key.pem
+    * root
+        * /src/customize/dist
+    * ```
+        "settings": {
+		    "liveServer.settings.multiRootWorkspaceName": "gameni_kume",
+		    "liveServer.settings.https": {
+			    "enable": true,
+	    		"cert": "c:\\tools\\mkcert\\localhost+2.pem",
+	    		"key": "c:\\tools\\mkcert\\localhost+2-key.pem"
+	    	},
+		    "liveServer.settings.host": "127.0.0.1",
+		    "liveServer.settings.root": "/src/customize/dist"
+    	}
+        ```
 
 
 # customize
@@ -39,9 +65,10 @@
 
 ## .env について
 * `_env` ファイルを複製して、ファイル名を `.env` にリネームして、プロジェクト直下に配置する
-* DEV_OUTPUT_PATH
-    * 開発時に随時更新するファイルを出力するフォルダ
-        * Dropboxなど
+* DIST_DIR
+    * webpackにて生成されるJavaScriptファイルが出力されるフォルダ
+* LOCAL_HTTPS_PATH
+    * ローカルHTTPSサーバーのURL
 * TARGET_APPS
     * kintone customize uploader で更新するアプリを指定する
     * 指定方法

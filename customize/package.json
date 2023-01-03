@@ -4,14 +4,13 @@
   "description": "for xxxxx_kintone customize using webpack,babel",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build-dev": "cross-env NODE_ENV=dev webpack --mode development",
-    "build-pro": "cross-env NODE_ENV=pro webpack --mode production",
-    "dev": "cross-env NODE_ENV=dev webpack --mode development --watch",
-    "pro": "cross-env NODE_ENV=pro webpack --mode production",
-    "upload-dropbox": "cross-env NODE_ENV=dev NODE_UPTO=dropbox babel-node --presets @babel/env -r dotenv/config uploader.js",
-    "upload-dev": "cross-env NODE_ENV=dev babel-node --presets @babel/env -r dotenv/config uploader.js",
-    "upload-pro": "cross-env NODE_ENV=pro babel-node --presets @babel/env -r dotenv/config uploader.js"
+    "build-dev": "cross-env ENV_MODE=dev webpack --mode development",
+    "build-pro": "cross-env ENV_MODE=pro webpack --mode production",
+    "dev": "cross-env ENV_MODE=dev webpack --mode development --watch",
+    "file2dev": "cross-env CUSTOMIZE_TYPE=file UPTO=dev babel-node --presets @babel/env -r dotenv/config uploader.js",
+    "svr2dev": "cross-env CUSTOMIZE_TYPE=svr UPTO=dev babel-node --presets @babel/env -r dotenv/config uploader.js",
+    "file2pro": "cross-env CUSTOMIZE_TYPE=file UPTO=pro babel-node --presets @babel/env -r dotenv/config uploader.js",
+    "svr2pro": "cross-env CUSTOMIZE_TYPE=svr UPTO=pro babel-node --presets @babel/env -r dotenv/config uploader.js"
   },
   "repository": {
     "type": "git",
@@ -38,7 +37,7 @@
     "@kintone/customize-uploader": "^3.0.1",
     "@kintone/dts-gen": "^3.0.5",
     "@types/jquery": "^3.4.1",
-    "@types/luxon": "^1.26.2",
+    "@types/luxon": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^4.2.0",
     "@typescript-eslint/parser": "^4.2.0",
     "babel-jest": "^26.6.3",
@@ -71,8 +70,9 @@
     "jquery": "^3.4.1",
     "jquery-ui": "^1.12.1",
     "jquery-ui-dist": "^1.12.1",
+    "jsdoc": "^3.6.10",
     "kintone-ui-component": "^1.0.2",
-    "luxon": "^1.26.0",
+    "luxon": "^3.0.0",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.33",
     "sweetalert2": "^11.4.0"
