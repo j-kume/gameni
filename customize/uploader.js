@@ -13,7 +13,7 @@ const command = `npx kintone-customize-uploader --domain ${process.env.KINTONE_D
 console.log('\n###############');
 
 const target_configs = apps_info.configs.filter(v => v.env === process.env.UPTO);
-const target_apps = process.env.TARGET_APPS.split(',');
+const target_apps = process.env.TARGET_APPS.split(',').map(v => v.trim());
 
 target_configs.forEach(config => {
   console.log(config.env + ' : ' + config.code + ' : ' + config.id + ' : ' + config.name);
