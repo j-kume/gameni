@@ -4,10 +4,14 @@
 |  `$ npm run build-dev`  |  ビルド / ソースマップあり  |
 |  `$ npm run build-pro`  |  ビルド / ソースマップなし  |
 |  `$ npm run dev`  |  ビルド / ソースマップあり / watchモード  |
-|  `$ npm run file2dev`  |  ファイルアップロード / アップロード先：開発環境  |
-|  `$ npm run svr2dev`  |  ローカルHTTPSサーバー / アップロード先：開発環境  |
-|  `$ npm run file2pro`  |  ファイルアップロード / アップロード先：本番環境  |
-|  `$ npm run svr2pro`  |  ローカルHTTPSサーバー / アップロード先：本番環境  |
+|  `$ npm run file2dev`  |  ファイルアップロード / TARGET_APPSに準じる / アップロード先：開発環境  |
+|  `$ npm run svr2dev`  |  ローカルHTTPSサーバー / TARGET_APPSに準じる / アップロード先：開発環境  |
+|  `$ npm run file2pro`  |  ファイルアップロード / TARGET_APPSに準じる / アップロード先：本番環境  |
+|  `$ npm run svr2pro`  |  ローカルHTTPSサーバー / TARGET_APPSに準じる / アップロード先：本番環境  |
+|  `$ npm run file2dev-all`  |  ファイルアップロード / 全アプリ / アップロード先：開発環境  |
+|  `$ npm run svr2dev-all`  |  ローカルHTTPSサーバー / 全アプリ / アップロード先：開発環境  |
+|  `$ npm run file2pro-all`  |  ファイルアップロード / 全アプリ / アップロード先：本番環境  |
+|  `$ npm run svr2pro-all`  |  ローカルHTTPSサーバー / 全アプリ / アップロード先：本番環境  |
 
 
 
