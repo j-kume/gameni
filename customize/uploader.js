@@ -17,6 +17,14 @@ const target_apps = process.env.TARGET_APPS.split(',').map(v => v.trim());
 
 target_configs.forEach(config => {
   console.log(config.env + ' : ' + config.code + ' : ' + config.id + ' : ' + config.name);
+  if (config.option) {
+    console.log('option : ');
+    for( const key in config.option ) {
+      if( config.option.hasOwnProperty(key) ) {
+        console.log( key + ': ' + config.option[key] );
+      }
+    }
+  }
 
   // target_appsに含まれていない時には、スキップする
   if (process.env.TARGET_APPS) {
@@ -51,6 +59,18 @@ target_configs.forEach(config => {
       distPath = process.env.DIST_DIR;
     }
     contents = contents.replace(/DIST_PATH/g, distPath);
+
+    if (config.option) {
+      for (const key in config.option) {
+        if (config.option.hasOwnProperty(key)) {
+          if (config.option[key]) {
+            contents = contents.replace(new RegExp(key, 'g'), config.option[key]);
+          } else {
+            contents = contents.replace(new RegExp('"' + key + '",', 'g'), '');
+          }
+        }
+      }
+    }
 
     console.log(' ... replace success!');
 
